@@ -12,5 +12,5 @@ def setup_openai_llm():
         timeout=None,
         api_key=os.getenv("OPENAI_API_KEY")
     )
-    print("The LLM has been created")
+
     return llm
