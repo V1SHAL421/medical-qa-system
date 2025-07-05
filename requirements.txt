@@ -16,8 +16,10 @@ langsmith==0.4.4
 openai==1.93.0
 orjson==3.10.18
 packaging==24.2
+pi==0.1.2
 pydantic==2.11.7
 pydantic_core==2.33.2
+python-dotenv==1.1.1
 PyYAML==6.0.2
 regex==2024.11.6
 requests==2.32.4
