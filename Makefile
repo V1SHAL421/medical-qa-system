@@ -1,4 +1,4 @@
-.PHONY: run test install lint
+.PHONY: run test install lint freeze
 
 run:
 	python src/main.py
@@ -12,3 +12,6 @@ lint:
 
 install:
 	pip install -r requirements.txt
+
+freeze:
+	pip freeze > requirements.txt
