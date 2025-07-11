@@ -1,6 +1,7 @@
 import {Stack, StackProps} from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { ApiGateway } from './ApiGateway';
+import { Lambda } from './Lambda';
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class CdkStack extends Stack {
@@ -9,11 +10,8 @@ export class CdkStack extends Stack {
 
     const api = new ApiGateway(this);
 
-    // The code that defines your stack goes here
+    const healthLakeLambda = new Lambda(this, "handle_healthlake_requests.py")
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'CdkQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    api.addIntegration("GET", "/healthlake", healthLakeLambda)
   }
 }
